@@ -1,0 +1,34 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('alumnis', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('study_program');
+            $table->integer('graduation_year');
+            $table->enum('status', ['Belum Dilacak', 'Teridentifikasi (Scholar/Web)', 'Perlu Verifikasi Manual', 'Data Tidak Ditemukan'])->default('Belum Dilacak');
+            $table->integer('confidence_score')->default(0);
+            $table->string('best_link')->nullable();
+            $table->timestamp('tracked_at')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('alumnis');
+    }
+};
