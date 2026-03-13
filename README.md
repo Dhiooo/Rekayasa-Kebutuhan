@@ -26,30 +26,3 @@ Sesuai dengan aspek kualitas yang ditentukan pada desain Daily Project 2, beriku
 | 4  | **Usability** | Responsivitas UI | Tampilan Dashboard proporsional di berbagai perangkat. | ✅ Berhasil |
 | 5  | **Reliability** | Validasi Input | Sistem menolak input tahun kelulusan yang tidak valid (misal: < 1900). | ✅ Berhasil |
 
-## ⚙️ Cara Instalasi (Lokal)
-1. Clone repository ini:
-   ```bash
-   git clone [link-repository-anda]
-   ```
-2. Install dependencies:
-   ```bash
-   composer install
-   npm install && npm run build
-   ```
-3. Copy file `.env.example` menjadi `.env` dan isi API Key berikut:
-   ```env
-   SERPER_API_KEY=your_key_here
-   GEMINI_API_KEY=your_key_here
-   ```
-4. Generate App Key & Jalankan Migrasi:
-   ```bash
-   php artisan key:generate
-   php artisan migrate
-   ```
-5. Jalankan Aplikasi:
-   ```bash
-   php artisan serve
-   ```
-
----
-**Dibuat oleh:** [Mochammad Eriza Anwar]
