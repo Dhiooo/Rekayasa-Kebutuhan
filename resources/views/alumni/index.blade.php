@@ -65,7 +65,7 @@
                             {{ $alumni->graduation_year }}
                         </td>
                         <td class="px-6 py-4 text-xs font-bold uppercase tracking-wider">
-                            @if($alumni->status == 'Teridentifikasi (Scholar/Web)' || $alumni->status == 'Teridentifikasi (Professional Social Media)')
+                            @if($alumni->status == 'Teridentifikasi (Data Publik)')
                                 <span class="bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded-lg border border-emerald-500/20 flex items-center w-fit space-x-1.5 backdrop-blur-sm">
                                     <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
                                     <span>Tervalidasi</span>

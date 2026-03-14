@@ -22,7 +22,7 @@ class AlumniController extends Controller
     {
         $stats = [
             'total' => Alumni::count(),
-            'tracked' => Alumni::where('status', 'Teridentifikasi (Scholar/Web)')->count(),
+            'tracked' => Alumni::where('status', 'Teridentifikasi (Data Publik)')->count(),
             'need_verification' => Alumni::where('status', 'Perlu Verifikasi Manual')->count(),
             'not_found' => Alumni::where('status', 'Data Tidak Ditemukan')->count(),
             'untracked' => Alumni::where('status', 'Belum Dilacak')->count(),
@@ -65,7 +65,7 @@ class AlumniController extends Controller
     {
         $stats = [
             'total' => Alumni::count(),
-            'tracked' => Alumni::where('status', 'Teridentifikasi (Scholar/Web)')->count(),
+            'tracked' => Alumni::where('status', 'Teridentifikasi (Data Publik)')->count(),
             'need_verification' => Alumni::where('status', 'Perlu Verifikasi Manual')->count(),
             'not_found' => Alumni::where('status', 'Data Tidak Ditemukan')->count(),
             'untracked' => Alumni::where('status', 'Belum Dilacak')->count(),
@@ -175,7 +175,7 @@ class AlumniController extends Controller
         $action = $request->input('action'); // 'valid' or 'reject'
 
         if ($action === 'valid') {
-            $alumni->status = 'Teridentifikasi (Scholar/Web)';
+            $alumni->status = 'Teridentifikasi (Data Publik)';
         } elseif ($action === 'reject') {
             $alumni->status = 'Data Tidak Ditemukan';
             $alumni->confidence_score = 0;

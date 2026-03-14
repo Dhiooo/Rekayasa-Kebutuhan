@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('study_program');
             $table->integer('graduation_year');
-            $table->enum('status', ['Belum Dilacak', 'Teridentifikasi (Scholar/Web)', 'Perlu Verifikasi Manual', 'Data Tidak Ditemukan'])->default('Belum Dilacak');
+            $table->string('status')->default('Belum Dilacak');
             $table->integer('confidence_score')->default(0);
             $table->string('best_link')->nullable();
             $table->timestamp('tracked_at')->nullable();

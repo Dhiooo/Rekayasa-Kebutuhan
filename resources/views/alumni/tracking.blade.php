@@ -66,7 +66,7 @@
                             </div>
                         </td>
                         <td class="px-6 py-4">
-                            @if($alumni->status == 'Teridentifikasi (Scholar/Web)' || $alumni->status == 'Teridentifikasi (Professional Social Media)')
+                            @if($alumni->status == 'Teridentifikasi (Data Publik)')
                                 <span class="text-emerald-400 text-[10px] font-bold uppercase border border-emerald-500/20 bg-emerald-500/5 px-2.5 py-1 rounded-lg flex items-center w-fit space-x-1.5">
                                     <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
                                     <span>Tervalidasi</span>

@@ -91,7 +91,7 @@ class AlumniTrackingService
 
         // 5) Set Final State
         if ($alumni->confidence_score === 3) {
-            $alumni->status = 'Teridentifikasi (Scholar/Web)';
+            $alumni->status = 'Teridentifikasi (Data Publik)';
             $alumni->tracked_at = now();
         } elseif ($alumni->confidence_score >= 1) {
             $alumni->status = 'Perlu Verifikasi Manual';
