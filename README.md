@@ -1,4 +1,4 @@
-# Alumni Tracking System 
+# Gradlink - Alumni Tracking System
 
 Sistem Pelacakan Alumni berbasis Web yang menggunakan AI untuk memvalidasi jejak digital alumni secara otomatis. Proyek ini dikembangkan sebagai bagian dari tugas mata kuliah Rekayasa Kebutuhan A
 

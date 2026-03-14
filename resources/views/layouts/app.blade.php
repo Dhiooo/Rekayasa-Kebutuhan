@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Pelacakan Alumni - Universitas Muhammadiyah Malang</title>
+    <title>Gradlink - Sistem Pelacakan Alumni UMM</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -29,7 +29,7 @@
                         </svg>
                     </div>
                     <div>
-                        <h1 class="text-lg font-extrabold font-outfit leading-tight text-white">Alumni<span class="text-indigo-400">Portal</span></h1>
+                        <h1 class="text-lg font-extrabold font-outfit leading-tight text-white">Grad<span class="text-indigo-400">link</span></h1>
                         <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-0.5">Campus Intelligence</p>
                     </div>
                 </div>
@@ -97,7 +97,7 @@
                 <div class="flex items-center space-x-4">
                     <div class="text-right">
                         <p class="text-xs font-bold text-slate-200 leading-none">Admin System</p>
-                        <p class="text-[10px] text-emerald-500 font-bold uppercase mt-1 tracking-tighter">Authorized Portal</p>
+                        <p class="text-[10px] text-emerald-500 font-bold uppercase mt-1 tracking-tighter">Authorized Gradlink</p>
                     </div>
                     <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-slate-400">
                         A
@@ -124,7 +124,7 @@
 
             <!-- Footer -->
             <footer class="p-8 text-center text-slate-700 text-[10px] font-bold uppercase tracking-[0.3em]">
-                &copy; {{ date('Y') }} Alumni Intelligence Portal • Universitas Muhammadiyah Malang
+                &copy; {{ date('Y') }} Gradlink Intelligence • Universitas Muhammadiyah Malang
             </footer>
         </main>
     </div>
