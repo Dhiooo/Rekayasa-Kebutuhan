@@ -15,9 +15,6 @@ class AlumniController extends Controller
         $this->trackingService = $trackingService;
     }
 
-    /**
-     * Display the dashboard with statistics.
-     */
     public function index()
     {
         $stats = [
@@ -81,7 +78,7 @@ class AlumniController extends Controller
     /**
      * Track a specific alumni.
      */
-    public function track($id)
+    public function trackSingle($id)
     {
         $alumni = Alumni::findOrFail($id);
         
@@ -124,7 +121,7 @@ class AlumniController extends Controller
 
         Alumni::create($validated);
 
-        return redirect()->route('alumni.index')->with('success', 'Data alumni berhasil ditambahkan.');
+        return redirect()->route('alumni.master')->with('success', 'Data alumni berhasil ditambahkan.');
     }
 
     /**
@@ -151,7 +148,7 @@ class AlumniController extends Controller
 
         $alumni->update($validated);
 
-        return redirect()->route('alumni.index')->with('success', 'Data alumni berhasil diperbarui.');
+        return redirect()->route('alumni.master')->with('success', 'Data alumni berhasil diperbarui.');
     }
 
     /**
@@ -171,7 +168,6 @@ class AlumniController extends Controller
     public function verify(Request $request, $id)
     {
         $alumni = Alumni::findOrFail($id);
-
         $action = $request->input('action'); // 'valid' or 'reject'
 
         if ($action === 'valid') {
@@ -180,6 +176,19 @@ class AlumniController extends Controller
             $alumni->status = 'Data Tidak Ditemukan';
             $alumni->confidence_score = 0;
             $alumni->best_link = null;
+            
+            // Clear out all tracked details on reject
+            $alumni->linkedin_url = null;
+            $alumni->instagram_url = null;
+            $alumni->facebook_url = null;
+            $alumni->tiktok_url = null;
+            $alumni->email = null;
+            $alumni->phone = null;
+            $alumni->workplace = null;
+            $alumni->workplace_address = null;
+            $alumni->job_position = null;
+            $alumni->employment_type = null;
+            $alumni->workplace_social_media = null;
         }
 
         $alumni->save();

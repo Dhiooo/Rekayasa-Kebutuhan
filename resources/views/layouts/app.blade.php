@@ -39,8 +39,8 @@
                 <!-- Navigasi Utama -->
                 <div class="space-y-1">
                     <p class="px-4 text-[10px] font-bold text-slate-600 uppercase tracking-[0.2em] mb-3">Navigasi Utama</p>
-                    <a href="{{ route('alumni.index') }}" class="flex items-center space-x-3 px-4 py-3 rounded-xl {{ Request::is('/') ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20' : 'text-slate-400 hover:bg-slate-800 hover:text-white' }} transition-all group font-medium text-sm">
-                        <svg class="w-5 h-5 {{ Request::is('/') ? 'text-white' : 'text-slate-500 group-hover:text-indigo-400' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <a href="{{ route('alumni.dashboard') }}" class="flex items-center space-x-3 px-4 py-3 rounded-xl {{ Request::routeIs('alumni.dashboard') ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20' : 'text-slate-400 hover:bg-slate-800 hover:text-white' }} transition-all group font-medium text-sm">
+                        <svg class="w-5 h-5 {{ Request::routeIs('alumni.dashboard') ? 'text-white' : 'text-slate-500 group-hover:text-indigo-400' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
                         </svg>
                         <span>Dashboard</span>
@@ -77,13 +77,15 @@
             </nav>
 
             <div class="p-6 border-t border-slate-800 mt-auto">
-                <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700">
-                    <div class="flex items-center space-x-2 mb-2">
-                        <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
-                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Active Services</span>
-                    </div>
-                    <p class="text-[9px] text-slate-500 font-medium">Serper API & Gemini Flash 3.1</p>
-                </div>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="w-full flex items-center justify-center space-x-2 py-3 px-4 bg-rose-500/10 hover:bg-rose-500 text-rose-500 hover:text-white rounded-xl border border-rose-500/20 transition-all text-xs font-bold uppercase tracking-widest">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                        </svg>
+                        <span>Keluar Sistem</span>
+                    </button>
+                </form>
             </div>
         </aside>
 
@@ -96,11 +98,11 @@
                 </div>
                 <div class="flex items-center space-x-4">
                     <div class="text-right">
-                        <p class="text-xs font-bold text-slate-200 leading-none">Admin System</p>
-                        <p class="text-[10px] text-emerald-500 font-bold uppercase mt-1 tracking-tighter">Authorized Gradlink</p>
+                        <p class="text-xs font-bold text-slate-200 leading-none">Hai, {{ Auth::user()->name }}</p>
+                        <p class="text-[10px] text-emerald-500 font-bold uppercase mt-1 tracking-tighter">{{ Auth::user()->username }} mode</p>
                     </div>
                     <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-slate-400">
-                        A
+                        {{ substr(Auth::user()->name, 0, 1) }}
                     </div>
                 </div>
             </header>

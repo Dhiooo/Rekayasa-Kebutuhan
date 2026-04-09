@@ -7,7 +7,7 @@
             <h1 class="text-3xl font-bold font-outfit text-slate-800">Edit Alumni</h1>
             <p class="text-slate-400 mt-1">Perbarui informasi data master alumni.</p>
         </div>
-        <a href="{{ route('alumni.index') }}" class="p-2 text-slate-400 hover:text-indigo-600 transition-all flex items-center space-x-2 font-bold text-sm">
+        <a href="{{ route('alumni.master') }}" class="p-2 text-slate-400 hover:text-indigo-600 transition-all flex items-center space-x-2 font-bold text-sm">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
             </svg>

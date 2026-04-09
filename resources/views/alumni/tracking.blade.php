@@ -97,14 +97,22 @@
                                     </button>
                                 </form>
                                 @if($alumni->status == 'Perlu Verifikasi Manual')
-                                    <form action="{{ route('alumni.verify', $alumni->id) }}" method="POST" class="inline">
-                                        @csrf
-                                        <button type="submit" name="decision" value="valid" class="text-emerald-500 bg-emerald-500/10 hover:bg-emerald-500/20 p-2 rounded-lg" title="Verifikasi">
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                            </svg>
-                                        </button>
-                                    </form>
+                                    <div class="flex items-center space-x-1">
+                                        <form action="{{ route('alumni.verify', $alumni->id) }}" method="POST" class="inline">
+                                            @csrf
+                                            <input type="hidden" name="action" value="valid">
+                                            <button type="submit" class="bg-emerald-500 hover:bg-emerald-600 text-white text-[9px] font-bold px-2 py-1.5 rounded transition-all">
+                                                ACC
+                                            </button>
+                                        </form>
+                                        <form action="{{ route('alumni.verify', $alumni->id) }}" method="POST" class="inline">
+                                            @csrf
+                                            <input type="hidden" name="action" value="reject">
+                                            <button type="submit" class="bg-rose-500/10 hover:bg-rose-500 text-rose-500 hover:text-white text-[9px] font-bold px-2 py-1.5 rounded border border-rose-500/20 transition-all">
+                                                Tolak
+                                            </button>
+                                        </form>
+                                    </div>
                                 @endif
                             </div>
                         </td>

@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Carbon;
 
 class AlumniSeeder extends Seeder
 {
@@ -12,62 +12,37 @@ class AlumniSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Alumni::insert([
+        \App\Models\Alumni::truncate(); // Wipe current data
+
+        $alumniData = [
             [
-                'name' => 'John Doe',
+                'name' => 'Mochammad Eriza Anwar',
                 'study_program' => 'Informatika',
-                'graduation_year' => 2022,
+                'graduation_year' => 2024,
                 'status' => 'Belum Dilacak',
-                'confidence_score' => 0,
-                'best_link' => null,
-                'tracked_at' => null,
-                'created_at' => now(),
-                'updated_at' => now(),
             ],
             [
-                'name' => 'Jane Smith',
-                'study_program' => 'Manajemen',
-                'graduation_year' => 2021,
-                'status' => 'Belum Dilacak',
-                'confidence_score' => 0,
-                'best_link' => null,
-                'tracked_at' => null,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'name' => 'Budi Santoso',
-                'study_program' => 'Teknik Elektro',
-                'graduation_year' => 2023,
-                'status' => 'Belum Dilacak',
-                'confidence_score' => 0,
-                'best_link' => null,
-                'tracked_at' => null,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'name' => 'Siti Aminah',
+                'name' => 'Dhio Cho',
                 'study_program' => 'Informatika',
-                'graduation_year' => 2020,
+                'graduation_year' => 2024,
                 'status' => 'Belum Dilacak',
-                'confidence_score' => 0,
-                'best_link' => null,
-                'tracked_at' => null,
-                'created_at' => now(),
-                'updated_at' => now(),
             ],
             [
-                'name' => 'Ahmad Rizal',
-                'study_program' => 'Hukum',
-                'graduation_year' => 2018,
+                'name' => 'Azka Ryan Pradana',
+                'study_program' => 'Informatika',
+                'graduation_year' => 2024,
                 'status' => 'Belum Dilacak',
+            ],
+        ];
+
+        foreach ($alumniData as $data) {
+            \App\Models\Alumni::create(array_merge($data, [
                 'confidence_score' => 0,
                 'best_link' => null,
                 'tracked_at' => null,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]
-        ]);
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]));
+        }
     }
 }

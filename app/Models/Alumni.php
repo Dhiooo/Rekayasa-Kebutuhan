@@ -14,10 +14,23 @@ class Alumni extends Model
         'confidence_score',
         'best_link',
         'tracked_at',
+        'linkedin_url',
+        'instagram_url',
+        'facebook_url',
+        'tiktok_url',
+        'youtube_url',
+        'email',
+        'phone',
+        'workplace',
+        'workplace_address',
+        'job_position',
+        'employment_type',
+        'workplace_social_media',
+        'social_evidence',
     ];
 
     protected $casts = [
         'tracked_at' => 'datetime',
-        'metadata' => 'array',
+        'social_evidence' => 'array',
     ];
 }

@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Mengarahkan semua pengunjung ke folder public secara otomatis
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>

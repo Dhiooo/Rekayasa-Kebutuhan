@@ -21,3 +21,11 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+
+# Custom ignores
+*.sql
+*.zip
+*.log
+test-gemini.php
+update_password.php
+v_dump.php
